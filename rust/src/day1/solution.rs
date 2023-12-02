@@ -2,12 +2,12 @@ use regex::Regex;
 use std::fs;
 use std::time::Instant;
 
-pub fn solution() {
+pub fn run() {
     let start = Instant::now();
-    let number_strings = vec![
+    let number_strings: Vec<&str> = vec![
         "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
     ];
-    let file = fs::read_to_string("../../../AoC/rust/input.txt").unwrap();
+    let file = fs::read_to_string("./inputs/day1/input.txt").unwrap();
     let sum = file.lines().fold(0, |acc, line| {
         // first get the indices of each match and place it in a vector
         let mut matches: Vec<(usize, String)> = vec![];
